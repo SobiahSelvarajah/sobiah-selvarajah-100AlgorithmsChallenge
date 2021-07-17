@@ -20,12 +20,25 @@ function sumOfNumbers(numArray: number[]): number {
     // keep adding the next number in the array to the result
     // until array length is reached
 
-    let result = 0;
+    // let result = 0;
     
-    for(let i=0; i < numArray.length; i++) {
-        result = numArray[i] + result
-    }
-    return result
+    // for(let i=0; i < numArray.length; i++) {
+    //     result = numArray[i] + result
+    // }
+    // return result
+
+
+    // ---- Method 2 ---- reducer
+    // create an arrow function
+    // to run through every element in array 
+    // and result with one output
+    // accumulator - adds value to the previously returned value (from previous iteration)
+    // currentValue - current value being processed in array
+    // reduce() - executes reducer function on each element of the array
+    
+    const reducer = (accumulator:number, currentValue:number) => accumulator + currentValue;
+
+    return numArray.reduce(reducer)
 }
 
 console.log(sumOfNumbers([4, 1, 9, 7]));
